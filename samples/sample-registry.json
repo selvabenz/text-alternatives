@@ -1,0 +1,39 @@
+{
+  "SchemaVersion": "0.1.0",
+  "ProjectShortName": "IRVTam",
+  "Occurrences": [
+    {
+      "Key": "PSA.117.1.YHWH.1",
+      "BookCode": "PSA",
+      "Chapter": 117,
+      "Verse": "1",
+      "Ordinal": 1,
+      "PreviousWord": "நாடுகளே",
+      "SourceName": "கர்த்தரை",
+      "NextWord": "துதியுங்கள்",
+      "GrammarTag": "ACC",
+      "SourceLeftJoin": "",
+      "SourceRightJoin": "த்",
+      "ContextHash": "EXAMPLE_ONLY",
+      "Stale": false,
+      "Karthar": {
+        "Surface": "கர்த்தரை",
+        "LeftJoin": "",
+        "RightJoin": "த்",
+        "Approved": true
+      },
+      "Yahweh": {
+        "Surface": "<EDITOR_APPROVAL_REQUIRED>",
+        "LeftJoin": "",
+        "RightJoin": "த்",
+        "Approved": false
+      },
+      "Jehovah": {
+        "Surface": "யெஹோவாவை",
+        "LeftJoin": "",
+        "RightJoin": "த்",
+        "Approved": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "0.1.0",
+  "rulePrecedence": [
+    "occurrenceOverride",
+    "houseStyleException",
+    "approvedMorphology",
+    "sandhiSuggestion",
+    "manualReview"
+  ],
+  "vallinamInitialToPulli": {
+    "க": "க்",
+    "ச": "ச்",
+    "ட": "ட்",
+    "த": "த்",
+    "ப": "ப்",
+    "ற": "ற்"
+  },
+  "leftRules": [
+    {
+      "id": "L-ACC-VALLINAM",
+      "when": {
+        "previousMorphology": "ACC",
+        "selectedNameStartsWith": "VALLINAM"
+      },
+      "action": "SUGGEST_MATCHING_PULLI",
+      "properNamePolicy": "PROJECT_APPROVAL_REQUIRED"
+    }
+  ],
+  "rightRules": [
+    {
+      "id": "R-ACC-VALLINAM",
+      "when": {
+        "divineNameMorphology": "ACC",
+        "nextStartsWith": "VALLINAM"
+      },
+      "action": "SUGGEST_MATCHING_PULLI"
+    }
+  ],
+  "otherMorphologyRules": "MANUAL_UNTIL_EDITORIALLY_APPROVED"
+}

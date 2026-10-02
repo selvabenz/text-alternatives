@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>TamilDivineName</AssemblyName>
+    <RootNamespace>TamilDivineName.Paratext95</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ParatextPluginInterfaces" Version="2.0.100" />
+    <PackageReference Include="ParatextCorePluginInterfaces" Version="2.0.100" />
+    <PackageReference Include="ParatextEmbeddedUiPluginInterfaces" Version="2.0.100" />
+  </ItemGroup>
+
+  <Target Name="CreateParatextPluginFile" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)"
+          DestinationFiles="$(TargetDir)TamilDivineName.ptxplg" />
+  </Target>
+</Project>

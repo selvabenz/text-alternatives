@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "0.1.0",
+  "note": "Only bare/nominative forms are seeded. All other Tamil morphology must be approved by the editorial team before publication.",
+  "profiles": {
+    "karthar": {
+      "NOM": {
+        "surface": "கர்த்தர்",
+        "approved": true
+      }
+    },
+    "yahweh": {
+      "NOM": {
+        "surface": "யாவே",
+        "approved": true
+      }
+    },
+    "jehovah": {
+      "NOM": {
+        "surface": "யெஹோவா",
+        "approved": true
+      }
+    }
+  },
+  "requiredEditorialForms": [
+    "ACC",
+    "DAT",
+    "GEN",
+    "INS",
+    "LOC",
+    "VOC",
+    "COMPOUND",
+    "OTHER"
+  ]
+}
