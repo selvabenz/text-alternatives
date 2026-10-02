@@ -1,3 +1,80 @@
+## Divine-name profiles
+
+Visible Tamil profiles:
+
+- கர்த்தர்
+- யாவே
+- யெகோவா
+
+Internal profile keys remain stable for backward compatibility.
+
+
+### v0.1.6 preflight fix
+
+The previous C# 5 checker falsely identified the `$` regex end-anchor in two valid
+verbatim regex strings as C# string interpolation. v0.1.6 corrects that check.
+
+Run:
+
+```text
+build\BUILD-AND-INSTALL-DIAGNOSTIC.cmd
+```
+
+
+### v0.1.6 compiler compatibility
+
+Paratext 9.5 machines may expose the older .NET Framework C# compiler, which supports
+C# 5 but not `/langversion:7.3`. v0.1.6 explicitly compiles the direct Windows build
+in C# 5 mode.
+
+Run:
+
+```text
+build\BUILD-AND-INSTALL-DIAGNOSTIC.cmd
+```
+
+The launcher first checks that the source remains compatible with C# 5.
+
+### v0.1.6 build fix
+
+If your computer has no local `netstandard.dll`, run:
+
+```text
+build\BUILD-WITH-AUTO-DEPENDENCY.cmd
+```
+
+It searches all known local locations first. If still missing, it downloads the official NETStandard.Library 2.0.3 reference package into `.build-deps` and continues.
+
+
+### If the build previously reported that the Facades folder was missing
+
+v0.1.6 now checks the normal Windows .NET Framework runtime Facades folders as well as the Developer Pack paths.
+
+First run:
+
+```text
+build\CHECK-PREREQUISITES.cmd
+```
+
+Then run:
+
+```text
+build\BUILD-AND-INSTALL-DIAGNOSTIC.cmd
+```
+
+
+## Recommended Windows build/install
+
+For Paratext 9.5.110.1, use:
+
+```text
+build\BUILD-AND-INSTALL-DIAGNOSTIC.cmd
+```
+
+Do **not** use a command window that disappears on error. The diagnostic launcher always pauses and writes `build-install.log`. If compilation fails, that log contains the exact compiler error.
+
+The install phase requests Administrator permission only after compilation succeeds.
+
 # Tamil Divine Name — Paratext 9.5 Plugin
 
 Target: **Paratext 9.5.110.1** on Windows, Plugin API 2.0.100 / .NET Framework 4.8.
@@ -6,9 +83,9 @@ Purpose: keep one authoritative Tamil Scripture project in Paratext while managi
 
 - கர்த்தர்
 - யாவே
-- யெஹோவா
+- யெகோவா
 
-The plugin is deliberately **non-destructive** in v0.1.0. It reads Scripture, builds a registry, runs Tamil boundary-sandhi QA, previews profiles, and exports publication USFM. It does **not** automatically rewrite the live Paratext project.
+The plugin is deliberately **non-destructive** in v0.1.6. It reads Scripture, builds a registry, runs Tamil boundary-sandhi QA, previews profiles, and exports publication USFM. It does **not** automatically rewrite the live Paratext project.
 
 ## Why boundary-aware rendering is required
 
@@ -19,7 +96,7 @@ The selectable unit is not merely the divine-name word. Tamil can change at both
 Example conceptually:
 
 - கர்த்தர் profile: `நம்மைக் கர்த்தர் ...`
-- யெஹோவா profile: `நம்மை யெஹோவா ...`
+- யெகோவா profile: `நம்மை யெகோவா ...`
 
 The preceding word changed because the initial consonant of the selected divine-name form changed.
 

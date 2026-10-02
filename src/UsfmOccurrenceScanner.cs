@@ -14,7 +14,7 @@ namespace TamilDivineName.Paratext95
             new Regex(@"\\nd\s+(?<name>.*?)\\nd\*", RegexOptions.Singleline | RegexOptions.Compiled);
 
         private static readonly Regex LexicalFallbackRegex =
-            new Regex(@"(?<name>கர்த்த(?:ர்|ரை|ருக்கு|ருடைய|ரின்|ரால்|ரிடம்|ரிடத்தில்|ரே|ராகிய|ருக்குள்)[\u0B80-\u0BFF]*|கர்த்தாவே|யாவே[\u0B80-\u0BFF]*|யெஹோவா[\u0B80-\u0BFF]*)",
+            new Regex(@"(?<name>கர்த்த(?:ர்|ரை|ருக்கு|ருடைய|ரின்|ரால்|ரிடம்|ரிடத்தில்|ரே|ராகிய|ருக்குள்)[\u0B80-\u0BFF]*|கர்த்தாவே|யாவே[\u0B80-\u0BFF]*|யெகோவா[\u0B80-\u0BFF]*)",
                       RegexOptions.Compiled);
 
         private static readonly Regex TamilWordRegex =
@@ -106,7 +106,7 @@ namespace TamilDivineName.Paratext95
                 p = o.Karthar;
             else if (baseName.StartsWith("யாவே", StringComparison.Ordinal))
                 p = o.Yahweh;
-            else if (baseName.StartsWith("யெஹோவா", StringComparison.Ordinal))
+            else if (baseName.StartsWith("யெகோவா", StringComparison.Ordinal))
                 p = o.Jehovah;
 
             if (p != null)

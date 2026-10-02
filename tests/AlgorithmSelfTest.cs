@@ -30,9 +30,9 @@ public static class AlgorithmSelfTest
             "க்",
             TamilSandhiEngine.SuggestLeftJoin("ACC", "கர்த்தர்", false, true));
 
-        Equal("ACC left before யெஹோவா => none",
+        Equal("ACC left before யெகோவா => none",
             "",
-            TamilSandhiEngine.SuggestLeftJoin("ACC", "யெஹோவா", false, true));
+            TamilSandhiEngine.SuggestLeftJoin("ACC", "யெகோவா", false, true));
 
         Equal("punctuation blocks right join",
             "",
